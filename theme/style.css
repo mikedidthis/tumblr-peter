@@ -1,0 +1,206 @@
+/*
+  highlight-color:     #f2992e;
+  highlight-alt-color: #c3700c;
+  background-color:    #ffffff;
+  heading-color:       #222222;
+  paragraph-color:     #545454;
+  divider-color:       #ededed;
+  quote-div-color:     #cccccc;
+  post-dets-color:     #b8b8b8;
+  aside-p-color:       #8c8c8c;
+*/
+
+
+/* ==========================================================================
+   CSS Reset (http://meyerweb.com/eric/tools/css/reset/ v2.0)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
+}
+/* ==========================================================================
+   Base Typography
+   ========================================================================== */
+body {
+  color: #545454;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.64285;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #222222;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+p {
+  margin-bottom: 23px;
+}
+ol, ul {
+  margin-bottom: 23px;
+}
+ul {
+  padding: 0 0 0 23px;
+}
+blockquote {
+  margin-bottom: 23px;
+  padding: 0 0 0 21px;
+  border-left: 2px solid #cccccc;
+}
+a {
+  border-bottom: 1px dotted #f2992e;
+  color: #f2992e;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 1px dotted #c3700c;
+  color: #c3700c;
+}
+
+
+/* ==========================================================================
+   Base Layout
+   ========================================================================== */
+.wrapper {
+  overflow: hidden;
+  margin-right: auto;
+  margin-left: auto;
+}
+aside {
+  float:left;
+}
+main {
+  float:left;
+}
+
+/* ==========================================================================
+   Post Layout
+   ========================================================================== */
+.post {
+  float: left;
+  border-bottom: 1px solid #ededed;
+}
+.post.text {
+
+}
+.post.audio {
+
+}
+.post.audio .tumblr_audio_player {
+  margin-bottom: 30px;
+}
+
+.post footer {
+  float: left;
+}
+.post footer ul {
+  padding: 0px;
+  margin: 0px;
+  float: right;
+  font-size: 10px;
+  line-height: 1.3;
+}
+.post footer li {
+  text-align: right;
+  color: #b8b8b8;
+}
+.post footer li a {
+  border-bottom: 0px;
+  color: inherit;
+}
+.post footer li a:hover {
+  border-bottom: 1px dotted #b8b8b8;
+}
+.post footer .date, .post footer .notecount {
+  width: auto;
+}
+.post footer .tags {
+  width: 100%;
+}
+.post footer .tags a:before {
+  content: '#';
+}
+.post footer .like_button, .post footer .reblog_button {
+  float: left;
+  margin: 3px 10px 3px 0;
+}
+.post footer .like_button {
+  line-height: 0;
+}
+.post footer .reblog_button {
+  border-bottom: 0px;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+@media screen and (min-width:0px) {
+  .wrapper {
+    padding: 0px 20px;
+    max-width: 540px;
+    width: 100%;
+  }
+  aside {
+    width: 100%;
+  }
+  main {
+    max-width: 500px;
+    width: 100%;
+  }
+  .post {
+    padding: 30px 0px;
+    width: 100%;
+  }
+  .post footer {
+    width: 100%;
+  }
+  .post footer ul {
+    width: 75%;
+  }
+}
