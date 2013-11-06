@@ -10,7 +10,6 @@
   aside-p-color:       #8c8c8c;
 */
 
-
 /* ==========================================================================
    CSS Reset (http://meyerweb.com/eric/tools/css/reset/ v2.0)
    ========================================================================== */
@@ -38,12 +37,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
 blockquote, q {
   quotes: none;
 }
@@ -61,6 +54,7 @@ table {
   -moz-box-sizing:    border-box;
   box-sizing:         border-box;
 }
+
 /* ==========================================================================
    Base Typography
    ========================================================================== */
@@ -73,8 +67,29 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   color: #222222;
-  font-weight: 700;
+  font-weight: 400;
   font-family: 'Montserrat', sans-serif;
+  margin-bottom: 23px;
+}
+h1 {
+  font-size: 36px;
+  line-height: 1.27778;
+}
+h2 {
+  font-size: 29px;
+  line-height: 1.58620;
+}
+h3 {
+  font-size: 23px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 11px;
 }
 p {
   margin-bottom: 23px;
@@ -83,7 +98,16 @@ ol, ul {
   margin-bottom: 23px;
 }
 ul {
-  padding: 0 0 0 23px;
+  padding: 0 0 0 16px;
+}
+ul li {
+  padding: 0 0 0 8px;
+}
+ol {
+  padding: 0 0 0 20px;
+}
+ol li {
+  padding: 0 0 0 3px;
 }
 blockquote {
   margin-bottom: 23px;
@@ -100,11 +124,14 @@ a:hover {
   color: #c3700c;
 }
 
-
 /* ==========================================================================
    Base Layout
    ========================================================================== */
+body {
+  border-top: 5px solid #f2992e;
+}
 .wrapper {
+  width: 100%;
   overflow: hidden;
   margin-right: auto;
   margin-left: auto;
@@ -115,37 +142,137 @@ aside {
 main {
   float:left;
 }
+img {
+  border-radius: 3px;
+  max-width: 100%;
+}
 
 /* ==========================================================================
-   Post Layout
+   Aside
+   ========================================================================== */
+aside h1 {
+  font-size: 18px;
+  width: 100%;
+  word-wrap: break-word;
+}
+aside h5 {
+  margin-bottom: 15px;
+  color: #8c8c8c;
+}
+aside p, aside ul {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8c8c8c;
+}
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+aside ul li {
+  padding: 0;
+}
+aside a {
+  border: 0;
+  color: #8c8c8c;
+}
+aside a:hover {
+  color: #8c8c8c;
+  border-color: #8c8c8c;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+.pagination {
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+}
+.pagination .prev, .pagination .next {
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  color: #8c8c8c;
+  border: 0;
+}
+.pagination .prev:hover, .pagination .next:hover {
+  color: #f2992e;
+}
+.pagination .prev {
+  float: left;
+}
+.pagination .prev:before {
+  content: '\2190';
+  margin: 0 3px 0 0;
+}
+.pagination .next {
+  float: right;
+}
+.pagination .next:after {
+  content: '\2192';
+  margin: 0 0 0 3px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+  float: left;
+  width: 100%;
+}
+footer p {
+  font-size: 10px;
+  line-height: 1.3;
+  color: #b8b8b8;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  float: left;
+  width: 50%;
+  margin: 0;
+}
+footer .copyright {
+  text-align: left;
+}
+footer .tumblr {
+  text-align: right;
+}
+footer a {
+  border: 0;
+}
+footer a:hover {
+  color: #b8b8b8;
+  border-color: #b8b8b8;
+}
+
+
+/* ==========================================================================
+   Post General
    ========================================================================== */
 .post {
   float: left;
+  width: 100%;
   border-bottom: 1px solid #ededed;
 }
-.post.text {
-
-}
-.post.audio {
-
-}
-.post.audio .tumblr_audio_player {
-  margin-bottom: 30px;
-}
-
 .post footer {
   float: left;
+  width: 100%;
+  position: relative;
 }
 .post footer ul {
-  padding: 0px;
+  padding: 0 0 0 60px;
   margin: 0px;
-  float: right;
+  float: left;
   font-size: 10px;
   line-height: 1.3;
+  width: 100%;
+  text-align: right;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  list-style: none;
 }
 .post footer li {
   text-align: right;
   color: #b8b8b8;
+  padding: 0px;
 }
 .post footer li a {
   border-bottom: 0px;
@@ -155,7 +282,12 @@ main {
   border-bottom: 1px dotted #b8b8b8;
 }
 .post footer .date, .post footer .notecount {
-  width: auto;
+  display: inline-block;
+}
+.post footer .date + .notecount:before {
+  content: '\2022';
+  margin: 0 4px 0 1px;
+  font-size: 10px;
 }
 .post footer .tags {
   width: 100%;
@@ -164,14 +296,91 @@ main {
   content: '#';
 }
 .post footer .like_button, .post footer .reblog_button {
-  float: left;
-  margin: 3px 10px 3px 0;
+  position: absolute;
+  top: 3px;
 }
 .post footer .like_button {
   line-height: 0;
+  left: 0px;
 }
 .post footer .reblog_button {
+  left: 30px;
   border-bottom: 0px;
+}
+
+/* ==========================================================================
+   Post Type
+   ========================================================================== */
+.chat > ol:first-child {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 16px;
+}
+.chat > ol:first-child li {
+  padding: 0;
+  margin: 0 0 7px 0;
+}
+.chat > ol:first-child span {
+  display: inline-block;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  min-width: 75px;
+}
+.chat > ol:first-child .odd span {
+  color: #f2992e;
+}
+.chat > ol:first-child .even span {
+  color: #c3700c;
+}
+.quote > blockquote:first-child {
+  color: #222222;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  border: 0px;
+  padding: 0px;
+}
+.quote > blockquote:first-child:before, .quote > blockquote:first-child:after {
+  color: #cccccc;
+}
+.quote > blockquote:first-child:before {
+  content: '\201c';
+}
+.quote > blockquote:first-child:after {
+  content: '\201d';
+}
+.quote > .short {
+  font-size: 29px;
+  line-height: 1.58620;
+}
+.quote > .medium {
+  font-size: 23px;
+}
+.quote > .long {
+  font-size: 18px;
+}
+.link > h2:first-child a:after {
+  content: ' \2192';
+}
+.audio .tumblr_audio_player {
+  margin-bottom: 23px;
+  max-width: 100%;
+}
+.photo > img:first-child {
+  float: left;
+  margin-bottom: 23px;
+}
+.video > .video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-bottom: 23px;
+}
+.video > .video-wrapper iframe, .video > .video-wrapper embed, .video > .video-wrapper object {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 /* ==========================================================================
@@ -184,23 +393,109 @@ main {
   .wrapper {
     padding: 0px 20px;
     max-width: 540px;
-    width: 100%;
   }
   aside {
+    margin-top: 30px;
     width: 100%;
+    position: relative;
+  }
+  aside img {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  aside h1 {
+    display: table;
+    table-layout: fixed;
+    padding: 0 74px 0 0;
+    height: 64px;
+  }
+  aside h1 span {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  aside h5 {
+    display: none;
+  }
+  aside ul {
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    margin-bottom: 0px;
+    text-align: center;
+    padding: 15px;
+  }
+  aside ul li {
+    display: inline-block;
+    margin: 0 5px;
   }
   main {
     max-width: 500px;
     width: 100%;
   }
-  .post {
+  .post, .pagination {
     padding: 30px 0px;
-    width: 100%;
   }
   .post footer {
-    width: 100%;
+    padding: 0px;
   }
-  .post footer ul {
-    width: 75%;
+  footer {
+    padding: 15px 0px;
+  }
+}
+
+/* aside 220px + 80px ( 300px )
+   main 500px  + 80px ( 580px )
+
+*/
+@media screen and (min-width:880px) {
+  .wrapper {
+    padding: 0 40px;
+    max-width: 880px;
+  }
+  aside {
+    width: 260px;
+    padding: 0 40px 0 0;
+    margin-top: 60px;
+  }
+  aside img {
+    float: left;
+    position: relative;
+    width: 128px;
+    height: 128px;
+    border-radius: 64px;
+    margin-bottom: 15px;
+  }
+  aside h1 {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  aside h1 span {
+    display: block;
+  }
+  aside h5 {
+    display: block;
+  }
+  aside ul {
+    border: 0;
+    padding: 0;
+    text-align: left;
+  }
+  aside ul li {
+    display: block;
+    margin: 0;
+  }
+  main {
+    width: 540px;
+    padding: 0 0 0 40px;
+  }
+  .post, .pagination {
+    padding: 60px 0;
+  }
+  footer {
+    padding: 30px 0;
   }
 }

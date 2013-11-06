@@ -24,9 +24,9 @@
         {/block:Posts}
         {/block:PermalinkPage}
         <!-- Development CSS -->
-        <link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/2190797/tuts-plus/style.css">
+        <link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/2190797/tumblr-peter/theme/style.css">
         <!-- Font CSS -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,700italic,400italic,400|Montserrat:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,700italic,400italic,400|Montserrat:400' rel='stylesheet' type='text/css'>
         <!-- Fav Icons -->
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="apple-touch-icon" href="{PortraitURL-128}">
@@ -50,13 +50,13 @@
       <div class="wrapper">
         <aside>
           <img src="{PortraitURL-128}" alt="{Title}"/>
-          <h1>{Title}</h1>
+          <h1><span>{Title}</span></h1>
           {block:Description}
-          <h5>About</h5>
+          <h5>{lang:About}</h5>
           <p>{Description}</p>
           {/block:Description}
           {block:HasPages}
-          <h5>Pages</h5>
+          <h5>{lang:Pages}</h5>
           <ul>
             {block:Pages}
             <li><a href="{URL}">{Label}</a></li>
@@ -113,7 +113,9 @@
             {/block:Audio}
 
             {block:Video}
-            {VideoEmbed-500}
+            <div class="video-wrapper">
+              {VideoEmbed-500}
+            </div>
             {block:Caption}
             {Caption}
             {/block:Caption}
@@ -158,17 +160,17 @@
           {block:Pagination}
           <section class="pagination">
             {block:PreviousPage}
-              <a href="{PreviousPage}">Prev Page</a>
+              <a href="{PreviousPage}" class="prev">{lang:Prev}</a>
             {/block:PreviousPage}
             {block:NextPage}
-              <a href="{NextPage}">Next Page</a>
+              <a href="{NextPage}" class="next">{lang:Next}</a>
             {/block:NextPage}
           </section>
           {/block:Pagination}
 
           <footer>
             <p class="copyright">{CopyrightYears} {Title}</p>
-            <p class="tumblr">Powered By Tumblr</p>
+            <p class="tumblr">{lang:Powered by Tumblr 2}</p>
           </footer>
         </main>
       </div>
