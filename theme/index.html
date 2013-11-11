@@ -30,9 +30,8 @@
         <link rel="apple-touch-icon" href="{PortraitURL-128}">
         <!-- RSS Feed -->
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        <!-- Feed / Social Usernames -->
+        <!-- Theme Text Options -->
         <meta name="text:Google Analytics ID" content=""/>
-        <meta name="text:Twitter Username" content=""/>
         <!-- Theme Booleans Options -->
         <meta name="if:Enable Twitter Feed" content="0" />
         <meta name="if:Post Like Button" content="1" />
@@ -696,7 +695,7 @@
     {block:IfGoogleAnalyticsID}
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '{GoogleAnalyticsID}']);
+        _gaq.push(['_setAccount', '{text:Google Analytics ID}']);
         _gaq.push(['_trackPageview']);
         (function() {
           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
