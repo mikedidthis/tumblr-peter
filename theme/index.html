@@ -23,8 +23,6 @@
         {/block:Date}
         {/block:Posts}
         {/block:PermalinkPage}
-        <!-- Development CSS -->
-        <link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/u/2190797/tumblr-peter/theme/style.css">
         <!-- Font CSS -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,700italic,400italic,400|Montserrat:400' rel='stylesheet' type='text/css'>
         <!-- Fav Icons -->
@@ -35,11 +33,511 @@
         <!-- Feed / Social Usernames -->
         <meta name="text:Google Analytics ID" content=""/>
         <meta name="text:Twitter Username" content=""/>
-        <!-- Theme Options -->
+        <!-- Theme Booleans Options -->
         <meta name="if:Enable Twitter Feed" content="0" />
+        <meta name="if:Post Like Button" content="1" />
+        <meta name="if:Post Reblog Button" content="1" />
+        <meta name="if:Post Time Stamp" content="1" />
+        <meta name="if:Post Notes Count" content="1" />
+        <meta name="if:Post Tags" content="1" />
+        <meta name="if:Profile Picture" content="1" />
+        <!-- Theme Color Options -->
+        <meta name="color:Highlight" content="#f2992e" />
+        <meta name="color:Highlight Alt" content="#c3700c" />
+        <meta name="color:Background" content="#ffffff" />
+        <meta name="color:Heading" content="#222222" />
+        <meta name="color:Paragraph" content="#545454" />
+        <meta name="color:Divider" content="#ededed" />
+        <meta name="color:Quote Border" content="#cccccc" />
+        <meta name="color:Post Details" content="#b8b8b8" />
+        <meta name="color:Aside Text" content="#8c8c8c" />
+        <!-- Theme Image Options -->
+        <meta name="image:Background" content="" />
         <!-- Theme CSS -->
         <style>
+        /* ==========================================================================
+           CSS Reset (http://meyerweb.com/eric/tools/css/reset/ v2.0)
+           ========================================================================== */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+          margin: 0;
+          padding: 0;
+          border: 0;
+          vertical-align: baseline;
+          font: inherit;
+          font-size: 100%;
+        }
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+          display: block;
+        }
+        blockquote, q {
+          quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+          content: '';
+          content: none;
+        }
+        table {
+          border-spacing: 0;
+          border-collapse: collapse;
+        }
+        * {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing:    border-box;
+          box-sizing:         border-box;
+        }
+        /* ==========================================================================
+           Base Typography
+           ========================================================================== */
+        body {
+          color: {color:Paragraph};
+          font-weight: 400;
+          font-size: 14px;
+          font-family: 'Open Sans', sans-serif;
+          line-height: 1.64285;
+        }
+        h1, h2, h3, h4, h5, h6 {
+          margin-bottom: 23px;
+          color: {color:Heading};
+          font-weight: 400;
+          font-family: 'Montserrat', sans-serif;
+        }
+        h1 {
+          font-size: 36px;
+          line-height: 1.27778;
+        }
+        h2 {
+          font-size: 29px;
+          line-height: 1.58620;
+        }
+        h3 {
+          font-size: 23px;
+        }
+        h4 {
+          font-size: 18px;
+        }
+        h5 {
+          font-size: 14px;
+        }
+        h6 {
+          font-size: 11px;
+        }
+        p {
+          margin-bottom: 23px;
+        }
+        ol, ul {
+          margin-bottom: 23px;
+        }
+        ul {
+          padding: 0 0 0 16px;
+        }
+        ul li {
+          padding: 0 0 0 8px;
+        }
+        ol {
+          padding: 0 0 0 20px;
+        }
+        ol li {
+          padding: 0 0 0 3px;
+        }
+        blockquote {
+          margin-bottom: 23px;
+          padding: 0 0 0 21px;
+          border-left: 2px solid {color:Quote Border};
+        }
+        a {
+          border-bottom: 1px dotted {color:Highlight};
+          color: {color:Highlight};
+          text-decoration: none;
+        }
+        a:hover {
+          border-bottom: 1px dotted {color:Highlight Alt};
+          color: {color:Highlight Alt};
+        }
+        /* ==========================================================================
+           Base Layout
+           ========================================================================== */
+        body {
+          border-top: 5px solid {color:Highlight};
+          background: {color:Background} url('{image:Background}');
+        }
+        .wrapper {
+          overflow: hidden;
+          margin-right: auto;
+          margin-left: auto;
+          width: 100%;
+        }
+        aside {
+          float:left;
+        }
+        main {
+          float:left;
+        }
+        img {
+          max-width: 100%;
+          border-radius: 3px;
+        }
+        /* ==========================================================================
+           Aside
+           ========================================================================== */
+        aside h1 {
+          width: 100%;
+          word-wrap: break-word;
+          font-size: 18px;
+        }
+        aside h5 {
+          margin-bottom: 15px;
+          color: {color:Aside Text};
+        }
+        aside p, aside ul {
+          color: {color:Aside Text};
+          font-size: 12px;
+          line-height: 1.5;
+        }
+        aside ul {
+          padding: 0;
+          list-style: none;
+        }
+        aside ul li {
+          padding: 0;
+        }
+        aside a {
+          border: 0;
+          color: {color:Aside Text};
+        }
+        aside a:hover {
+          border-color: {color:Aside Text};
+          color: {color:Aside Text};
+        }
+        /* ==========================================================================
+           Pagination
+           ========================================================================== */
+        .pagination {
+          float: left;
+          width: 100%;
+          border-bottom: 1px solid {color:Divider};
+        }
+        .pagination .prev, .pagination .next {
+          border: 0;
+          color: {color:Aside Text};
+          font-weight: 400;
+          font-family: 'Montserrat', sans-serif;
+        }
+        .pagination .prev:hover, .pagination .next:hover {
+          color: {color:Highlight};
+        }
+        .pagination .prev {
+          float: left;
+        }
+        .pagination .prev:before {
+          margin: 0 3px 0 0;
+          content: '\2190';
+        }
+        .pagination .next {
+          float: right;
+        }
+        .pagination .next:after {
+          margin: 0 0 0 3px;
+          content: '\2192';
+        }
+        /* ==========================================================================
+           Footer
+           ========================================================================== */
+        footer {
+          float: left;
+          width: 100%;
+        }
+        footer p {
+          float: left;
+          margin: 0;
+          width: 50%;
+          color: {color:Post Details};
+          font-weight: 400;
+          font-size: 10px;
+          font-family: 'Montserrat', sans-serif;
+          line-height: 1.3;
+        }
+        footer .copyright {
+          text-align: left;
+        }
+        footer .tumblr {
+          text-align: right;
+        }
+        footer a {
+          border: 0;
+        }
+        footer a:hover {
+          border-color: {color:Post Details};
+          color: {color:Post Details};
+        }
+        /* ==========================================================================
+           Post General
+           ========================================================================== */
+        .post {
+          float: left;
+          width: 100%;
+          border-bottom: 1px solid {color:Divider};
+        }
+        .post footer {
+          position: relative;
+          float: left;
+          width: 100%;
+        }
+        .post footer ul {
+          float: left;
+          margin: 0px;
+          width: 100%;
+          list-style: none;
+          text-align: right;
+          font-weight: 400;
+          font-size: 10px;
+          font-family: 'Montserrat', sans-serif;
+          line-height: 1.3;
+          min-height: 26px;
+        }
+        .post footer .like_button + ul, .post footer .reblog_button + ul{
+          padding: 0 0 0 30px;
+        }
+        .post footer .like_button + .reblog_button + ul {
+          padding: 0 0 0 60px;
+        }
+        .post footer li {
+          padding: 0px;
+          color: {color:Post Details};
+          text-align: right;
+        }
+        .post footer li a {
+          border-bottom: 0px;
+          color: inherit;
+        }
+        .post footer li a:hover {
+          border-bottom: 1px dotted {color:Post Details};
+        }
+        .post footer .date, .post footer .notecount {
+          display: inline-block;
+        }
+        .post footer .date + .notecount:before {
+          margin: 0 4px 0 1px;
+          content: '\2022';
+          font-size: 10px;
+        }
+        .post footer .tags {
+          width: 100%;
+        }
+        .post footer .tags a:before {
+          content: '#';
+        }
+        .post footer .like_button, .post footer .reblog_button {
+          position: absolute;
+          top: 3px;
+          left: 0px;
+          line-height: 0;
+          margin-bottom: 0
+        }
+        .post footer .like_button + .reblog_button {
+          left: 30px;
+        }
 
+        /* ==========================================================================
+           Post Type
+           ========================================================================== */
+        .chat > ol:first-child {
+          margin-bottom: 16px;
+          padding: 0;
+          list-style: none;
+        }
+        .chat > ol:first-child li {
+          margin: 0 0 7px 0;
+          padding: 0;
+        }
+        .chat > ol:first-child span {
+          display: inline-block;
+          min-width: 75px;
+          font-weight: 400;
+          font-family: 'Montserrat', sans-serif;
+        }
+        .chat > ol:first-child .odd span {
+          color: {color:Highlight};
+        }
+        .chat > ol:first-child .even span {
+          color: {color:Highlight Alt};
+        }
+        .quote > blockquote:first-child {
+          padding: 0px;
+          border: 0px;
+          color: {color:Heading};
+          font-weight: 400;
+          font-family: 'Montserrat', sans-serif;
+        }
+        .quote > blockquote:first-child:before, .quote > blockquote:first-child:after {
+          color: {color:Quote Border};
+        }
+        .quote > blockquote:first-child:before {
+          content: '\201c';
+        }
+        .quote > blockquote:first-child:after {
+          content: '\201d';
+        }
+        .quote > .short {
+          font-size: 29px;
+          line-height: 1.58620;
+        }
+        .quote > .medium {
+          font-size: 23px;
+        }
+        .quote > .long {
+          font-size: 18px;
+        }
+        .link > h2:first-child a:after {
+          content: ' \2192';
+        }
+        .audio .tumblr_audio_player {
+          margin-bottom: 23px;
+          max-width: 100%;
+        }
+        .photo > img:first-child {
+          float: left;
+          margin-bottom: 23px;
+        }
+        .video > .video-wrapper {
+          position: relative;
+          margin-bottom: 23px;
+          padding-top: 56.25%;
+          width: 100%;
+        }
+        .video > .video-wrapper iframe, .video > .video-wrapper embed, .video > .video-wrapper object {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+        /* ==========================================================================
+           Media Queries
+           ========================================================================== */
+        /* 1 column */
+        @-ms-viewport { width: device-width; }
+        @-o-viewport { width: device-width; }
+        @viewport { width: device-width; }
+        @media screen and (min-width:0px) {
+          .wrapper {
+            padding: 0px 20px;
+            max-width: 540px;
+          }
+          aside {
+            position: relative;
+            margin-top: 30px;
+            width: 100%;
+          }
+          aside img {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 64px;
+            height: 64px;
+            border-radius: 32px;
+          }
+          aside h1 {
+            display: table;
+            padding: 0 74px 0 0;
+            height: 64px;
+            table-layout: fixed;
+          }
+          aside h1 span {
+            display: table-cell;
+            vertical-align: middle;
+          }
+          aside h5 {
+            display: none;
+          }
+          aside ul {
+            margin-bottom: 0px;
+            padding: 15px;
+            border-top: 1px solid {color:Divider};
+            border-bottom: 1px solid {color:Divider};
+            text-align: center;
+          }
+          aside ul li {
+            display: inline-block;
+            margin: 0 5px;
+          }
+          main {
+            max-width: 500px;
+            width: 100%;
+          }
+          .post, .pagination {
+            padding: 30px 0px;
+          }
+          .post footer {
+            padding: 0px;
+          }
+          footer {
+            padding: 15px 0px;
+          }
+        }
+        /* 2 Columns */
+        @media screen and (min-width:880px) {
+          .wrapper {
+            max-width: 840px;
+          }
+          aside {
+            margin-top: 60px;
+            padding: 0 40px 0 0;
+            width: 260px;
+          }
+          aside img {
+            position: relative;
+            float: left;
+            margin-bottom: 15px;
+            width: 128px;
+            height: 128px;
+            border-radius: 64px;
+          }
+          aside h1 {
+            padding: 0;
+            width: 100%;
+            height: auto;
+          }
+          aside h1 span {
+            display: block;
+          }
+          aside h5 {
+            display: block;
+          }
+          aside ul {
+            padding: 0;
+            border: 0;
+            text-align: left;
+          }
+          aside ul li {
+            display: block;
+            margin: 0;
+          }
+          main {
+            padding: 0 0 0 40px;
+            max-width: 540px;
+            width: 540px;
+          }
+          .post, .pagination {
+            padding: 60px 0;
+          }
+          footer {
+            padding: 30px 0;
+          }
+        }
         </style>
         <!-- Custom CSS -->
         <style>
@@ -49,7 +547,9 @@
     <body>
       <div class="wrapper">
         <aside>
+          {block:IfProfilePicture}
           <img src="{PortraitURL-128}" alt="{Title}"/>
+          {/block:IfProfilePicture}
           <h1><span>{Title}</span></h1>
           {block:Description}
           <h5>{lang:About}</h5>
@@ -64,25 +564,21 @@
           </ul>
           {/block:HasPages}
         </aside>
-
         <main>
           {block:Posts}
           <article class="post {PostType}">
-
             {block:Photo}
             <img src="{PhotoURL-500}" alt="{PhotoAlt}">
             {block:Caption}
             {Caption}
             {/block:Caption}
             {/block:Photo}
-
             {block:Text}
             {block:Title}
             <h2>{Title}</h2>
             {/block:Title}
             {Body}
             {/block:Text}
-
             {block:Quote}
             <blockquote class="{Length}">
               {Quote}
@@ -91,7 +587,6 @@
             <p>{Source}</p>
             {/block:Source}
             {/block:Quote}
-
             {block:Chat}
             <ol>
               {block:Lines}
@@ -104,14 +599,12 @@
               {/block:Lines}
             </ol>
             {/block:Chat}
-
             {block:Audio}
             {AudioEmbed}
             {block:Caption}
             {Caption}
             {/block:Caption}
             {/block:Audio}
-
             {block:Video}
             <div class="video-wrapper">
               {VideoEmbed-500}
@@ -120,24 +613,31 @@
             {Caption}
             {/block:Caption}
             {/block:Video}
-
             {block:Link}
             <h2><a href="{URL}" {Target}>{Name}</a></h2>
             {block:Description}
             {Description}
             {/block:Description}
             {/block:Link}
-
             <footer>
+              {block:IfPostLikeButton}
               {LikeButton}
+              {/block:IfPostLikeButton}
+              {block:IfPostReblogButton}
               {ReblogButton}
+              {/block:IfPostReblogButton}
               <ul>
+                {block:IfPostTimeStamp}
                 {block:Date}
                 <li class="date"><a href="{Permalink}">{Timeago}</a></li>
                 {/block:Date}
+                {/block:IfPostTimeStamp}
+                {block:IfPostNotesCount}
                 {block:NoteCount}
                 <li class="notecount"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>
                 {/block:NoteCount}
+                {/block:IfPostNotesCount}
+                {block:IfPostTags}
                 {block:HasTags}
                 <li class="tags">
                   {block:Tags}
@@ -145,18 +645,16 @@
                   {/block:Tags}
                 </li>
                 {/block:HasTags}
+                {/block:IfPostTags}
               </ul>
             </footer>
-
             {block:PostNotes}
             <section id="notes">
               {PostNotes-64}
             </section>
             {/block:PostNotes}
-
           </article>
           {/block:Posts}
-
           {block:Pagination}
           <section class="pagination">
             {block:PreviousPage}
@@ -167,7 +665,6 @@
             {/block:NextPage}
           </section>
           {/block:Pagination}
-
           <footer>
             <p class="copyright">{CopyrightYears} {Title}</p>
             <p class="tumblr">{lang:Powered by Tumblr 2}</p>

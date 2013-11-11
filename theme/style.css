@@ -9,7 +9,6 @@
   post-dets-color:     #b8b8b8;
   aside-p-color:       #8c8c8c;
 */
-
 /* ==========================================================================
    CSS Reset (http://meyerweb.com/eric/tools/css/reset/ v2.0)
    ========================================================================== */
@@ -54,7 +53,6 @@ table {
   -moz-box-sizing:    border-box;
   box-sizing:         border-box;
 }
-
 /* ==========================================================================
    Base Typography
    ========================================================================== */
@@ -66,10 +64,10 @@ body {
   line-height: 1.64285;
 }
 h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 23px;
   color: #222222;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
-  margin-bottom: 23px;
 }
 h1 {
   font-size: 36px;
@@ -123,7 +121,6 @@ a:hover {
   border-bottom: 1px dotted #c3700c;
   color: #c3700c;
 }
-
 /* ==========================================================================
    Base Layout
    ========================================================================== */
@@ -131,10 +128,10 @@ body {
   border-top: 5px solid #f2992e;
 }
 .wrapper {
-  width: 100%;
   overflow: hidden;
   margin-right: auto;
   margin-left: auto;
+  width: 100%;
 }
 aside {
   float:left;
@@ -143,30 +140,29 @@ main {
   float:left;
 }
 img {
-  border-radius: 3px;
   max-width: 100%;
+  border-radius: 3px;
 }
-
 /* ==========================================================================
    Aside
    ========================================================================== */
 aside h1 {
-  font-size: 18px;
   width: 100%;
   word-wrap: break-word;
+  font-size: 18px;
 }
 aside h5 {
   margin-bottom: 15px;
   color: #8c8c8c;
 }
 aside p, aside ul {
+  color: #8c8c8c;
   font-size: 12px;
   line-height: 1.5;
-  color: #8c8c8c;
 }
 aside ul {
-  list-style: none;
   padding: 0;
+  list-style: none;
 }
 aside ul li {
   padding: 0;
@@ -176,10 +172,9 @@ aside a {
   color: #8c8c8c;
 }
 aside a:hover {
-  color: #8c8c8c;
   border-color: #8c8c8c;
+  color: #8c8c8c;
 }
-
 /* ==========================================================================
    Pagination
    ========================================================================== */
@@ -189,10 +184,10 @@ aside a:hover {
   border-bottom: 1px solid #ededed;
 }
 .pagination .prev, .pagination .next {
+  border: 0;
+  color: #8c8c8c;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
-  color: #8c8c8c;
-  border: 0;
 }
 .pagination .prev:hover, .pagination .next:hover {
   color: #f2992e;
@@ -201,17 +196,16 @@ aside a:hover {
   float: left;
 }
 .pagination .prev:before {
-  content: '\2190';
   margin: 0 3px 0 0;
+  content: '\2190';
 }
 .pagination .next {
   float: right;
 }
 .pagination .next:after {
-  content: '\2192';
   margin: 0 0 0 3px;
+  content: '\2192';
 }
-
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -220,14 +214,14 @@ footer {
   width: 100%;
 }
 footer p {
-  font-size: 10px;
-  line-height: 1.3;
+  float: left;
+  margin: 0;
+  width: 50%;
   color: #b8b8b8;
   font-weight: 400;
+  font-size: 10px;
   font-family: 'Montserrat', sans-serif;
-  float: left;
-  width: 50%;
-  margin: 0;
+  line-height: 1.3;
 }
 footer .copyright {
   text-align: left;
@@ -239,11 +233,9 @@ footer a {
   border: 0;
 }
 footer a:hover {
-  color: #b8b8b8;
   border-color: #b8b8b8;
+  color: #b8b8b8;
 }
-
-
 /* ==========================================================================
    Post General
    ========================================================================== */
@@ -253,26 +245,26 @@ footer a:hover {
   border-bottom: 1px solid #ededed;
 }
 .post footer {
+  position: relative;
   float: left;
   width: 100%;
-  position: relative;
 }
 .post footer ul {
-  padding: 0 0 0 60px;
-  margin: 0px;
   float: left;
-  font-size: 10px;
-  line-height: 1.3;
+  margin: 0px;
+  padding: 0 0 0 60px;
   width: 100%;
-  text-align: right;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
   list-style: none;
+  text-align: right;
+  font-weight: 400;
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.3;
 }
 .post footer li {
-  text-align: right;
-  color: #b8b8b8;
   padding: 0px;
+  color: #b8b8b8;
+  text-align: right;
 }
 .post footer li a {
   border-bottom: 0px;
@@ -285,8 +277,8 @@ footer a:hover {
   display: inline-block;
 }
 .post footer .date + .notecount:before {
-  content: '\2022';
   margin: 0 4px 0 1px;
+  content: '\2022';
   font-size: 10px;
 }
 .post footer .tags {
@@ -300,31 +292,30 @@ footer a:hover {
   top: 3px;
 }
 .post footer .like_button {
-  line-height: 0;
   left: 0px;
+  line-height: 0;
 }
 .post footer .reblog_button {
   left: 30px;
   border-bottom: 0px;
 }
-
 /* ==========================================================================
    Post Type
    ========================================================================== */
 .chat > ol:first-child {
-  list-style: none;
-  padding: 0;
   margin-bottom: 16px;
+  padding: 0;
+  list-style: none;
 }
 .chat > ol:first-child li {
-  padding: 0;
   margin: 0 0 7px 0;
+  padding: 0;
 }
 .chat > ol:first-child span {
   display: inline-block;
+  min-width: 75px;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
-  min-width: 75px;
 }
 .chat > ol:first-child .odd span {
   color: #f2992e;
@@ -333,11 +324,11 @@ footer a:hover {
   color: #c3700c;
 }
 .quote > blockquote:first-child {
+  padding: 0px;
+  border: 0px;
   color: #222222;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
-  border: 0px;
-  padding: 0px;
 }
 .quote > blockquote:first-child:before, .quote > blockquote:first-child:after {
   color: #cccccc;
@@ -371,21 +362,21 @@ footer a:hover {
 }
 .video > .video-wrapper {
   position: relative;
-  width: 100%;
-  padding-top: 56.25%;
   margin-bottom: 23px;
+  padding-top: 56.25%;
+  width: 100%;
 }
 .video > .video-wrapper iframe, .video > .video-wrapper embed, .video > .video-wrapper object {
   position: absolute;
-  height: 100%;
-  width: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
 }
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+/* 1 column */
 @-ms-viewport { width: device-width; }
 @-o-viewport { width: device-width; }
 @viewport { width: device-width; }
@@ -395,23 +386,23 @@ footer a:hover {
     max-width: 540px;
   }
   aside {
+    position: relative;
     margin-top: 30px;
     width: 100%;
-    position: relative;
   }
   aside img {
-    width: 64px;
-    height: 64px;
-    border-radius: 32px;
     position: absolute;
     top: 0px;
     right: 0px;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
   }
   aside h1 {
     display: table;
-    table-layout: fixed;
     padding: 0 74px 0 0;
     height: 64px;
+    table-layout: fixed;
   }
   aside h1 span {
     display: table-cell;
@@ -421,11 +412,11 @@ footer a:hover {
     display: none;
   }
   aside ul {
+    margin-bottom: 0px;
+    padding: 15px;
     border-top: 1px solid #ededed;
     border-bottom: 1px solid #ededed;
-    margin-bottom: 0px;
     text-align: center;
-    padding: 15px;
   }
   aside ul li {
     display: inline-block;
@@ -445,33 +436,28 @@ footer a:hover {
     padding: 15px 0px;
   }
 }
-
-/* aside 220px + 80px ( 300px )
-   main 500px  + 80px ( 580px )
-
-*/
+/* 2 Columns */
 @media screen and (min-width:880px) {
   .wrapper {
-    padding: 0 40px;
-    max-width: 880px;
+    max-width: 840px;
   }
   aside {
-    width: 260px;
-    padding: 0 40px 0 0;
     margin-top: 60px;
+    padding: 0 40px 0 0;
+    width: 260px;
   }
   aside img {
-    float: left;
     position: relative;
+    float: left;
+    margin-bottom: 15px;
     width: 128px;
     height: 128px;
     border-radius: 64px;
-    margin-bottom: 15px;
   }
   aside h1 {
+    padding: 0;
     width: 100%;
     height: auto;
-    padding: 0;
   }
   aside h1 span {
     display: block;
@@ -480,8 +466,8 @@ footer a:hover {
     display: block;
   }
   aside ul {
-    border: 0;
     padding: 0;
+    border: 0;
     text-align: left;
   }
   aside ul li {
@@ -489,8 +475,9 @@ footer a:hover {
     margin: 0;
   }
   main {
-    width: 540px;
     padding: 0 0 0 40px;
+    max-width: 540px;
+    width: 540px;
   }
   .post, .pagination {
     padding: 60px 0;
