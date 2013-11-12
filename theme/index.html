@@ -32,8 +32,9 @@
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <!-- Theme Text Options -->
         <meta name="text:Google Analytics ID" content=""/>
+        <meta name="text:Twitter Feed Length" content="2" />
         <!-- Theme Booleans Options -->
-        <meta name="if:Enable Twitter Feed" content="0" />
+        <meta name="if:Twitter Feed" content="0" />
         <meta name="if:Post Like Button" content="1" />
         <meta name="if:Post Reblog Button" content="1" />
         <meta name="if:Post Time Stamp" content="1" />
@@ -234,6 +235,9 @@
         aside h1 span a, aside h1 span a:hover {
           border: 0;
           color: inherit;
+        }
+        aside #twitter p {
+          margin: 0 0 15px 0;
         }
         /* ==========================================================================
            Pagination
@@ -521,6 +525,11 @@
             display: inline-block;
             margin: 0 5px;
           }
+          aside #twitter {
+            text-align: center;
+            border-bottom: 1px solid {color:Divider};
+            margin: 15px 0 0 0;
+          }
           main {
             max-width: 500px;
             width: 100%;
@@ -567,10 +576,13 @@
           aside h5 {
             display: block;
           }
-          aside ul {
+          aside ul, aside #twitter {
             padding: 0;
             border: 0;
             text-align: left;
+          }
+          aside #twitter {
+            margin: 23px 0 0 0;
           }
           aside ul li {
             display: block;
@@ -616,6 +628,14 @@
             {/block:Pages}
           </ul>
           {/block:HasPages}
+          {block:IfTwitterFeed}
+          {block:Twitter}
+          <div id="twitter">
+            <h5>Latest From Twitter</h5>
+            <div id="tweets"></div>
+          </div>
+          {/block:Twitter}
+          {/block:IfTwitterFeed}
         </aside>
         <main>
           {block:TagPage}
@@ -727,22 +747,25 @@
           </footer>
         </main>
       </div>
-    {block:IfEnableTwitterFeed}
+    {block:IfTwitterFeed}
+    {block:Twitter}
     <script type="text/javascript">
         function recent_tweets(data) {
-          for (i=0; i<data.length; i++) {
+          var tweetsToDisplay = {text:Twitter Feed Length};
+          for (i=0; i<tweetsToDisplay; i++) {
             document.getElementById("tweets").innerHTML =
             document.getElementById("tweets").innerHTML +
-            '<a href="http://twitter.com/{TwitterUsername}/status/' +
+            '<p><a href="http://twitter.com/{TwitterUsername}/status/' +
             (data[i].id_str ? data[i].id_str : data[i].id) +
-            '"><div class="content">' + data[i].text +
-            '</div></a>';
+            '" target="_blank">' + data[i].text +
+            '</a></p>';
           }
           document.getElementById("twitter").style.display = 'block';
         }
     </script>
     <script type="text/javascript" src="/tweets.js"></script>
-    {/block:IfEnableTwitterFeed}
+    {/block:Twitter}
+    {/block:IfTwitterFeed}
     {block:IfGoogleAnalyticsID}
     <script type="text/javascript">
         var _gaq = _gaq || [];
