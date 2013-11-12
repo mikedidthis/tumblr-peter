@@ -616,6 +616,7 @@
             {/block:Pages}
           </ul>
           {/block:HasPages}
+          <ul id="twitter"><div id="tweets"></div></ul>
         </aside>
         <main>
           {block:TagPage}
@@ -741,6 +742,7 @@
           document.getElementById("twitter").style.display = 'block';
         }
     </script>
+    <script type="text/javascript" src="/tweets.js"></script>
     {/block:IfEnableTwitterFeed}
     {block:IfGoogleAnalyticsID}
     <script type="text/javascript">
